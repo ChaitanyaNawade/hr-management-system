@@ -46,7 +46,7 @@ public class Employee
     private String phoneNumber;
 
     @NotNull
-    @DecimalMin(value = "0.0")
+    @DecimalMin(value = "0.0",inclusive = false)
     @Column(nullable = false)
     private BigDecimal salary;
 
@@ -83,4 +83,7 @@ public class Employee
     {
         updatedAt = LocalDateTime.now();
     }
+
+    @OneToOne(mappedBy = "employee" , fetch = FetchType.LAZY)
+    private User user;
 }

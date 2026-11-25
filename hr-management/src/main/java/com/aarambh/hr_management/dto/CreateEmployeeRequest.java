@@ -6,7 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.stereotype.Service;
+
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -17,14 +17,14 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class CreateEmployeeRequest
 {
-    @NotBlank
+    @NotBlank(message = "first name is required")
     private String firstName;
 
-    @NotBlank
+    @NotBlank(message = "last name is required")
     private String lastName;
 
-    @NotBlank
-    @Email
+    @NotBlank(message = "Email is required")
+    @Email(message = "Please provide a valid email")
     private String email;
 
     @NotBlank

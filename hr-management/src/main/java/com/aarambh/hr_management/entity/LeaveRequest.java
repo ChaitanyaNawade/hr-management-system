@@ -48,6 +48,7 @@ public class LeaveRequest
         appliedAt = LocalDateTime.now();
     }
 
+    @Column
     private LocalDateTime reviewedAt;
 
     @ManyToOne(fetch = FetchType.LAZY)
